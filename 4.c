@@ -1,32 +1,34 @@
 #include <stdio.h>
 
-void repeat(int arr[],int size)
+void swap(int *xp, int *yp)
 {
-  int i,j;
-  printf("Repeated elements : ");
-  for (i=0;i<size;i++)
-  { 
-    for (j=i+1;j<size;j++)
-    {
-     
-     if (arr[i]==arr[j])
-      {
-        printf("%d ",arr[j]);
-      }
-    }
-  }
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
 }
 
+void bubbleSort(int arr[], int n)
+{
+    int i, j;
+    for (i = 0; i < n ; i++)
+        for (j = 0; j < n - i - 1; j++)
+            if (arr[j] > arr[j + 1])
+                swap(&arr[j], &arr[j + 1]);
+}
+
+void printArray(int arr[], int size)
+{
+    int i;
+    for (i = 0; i < size; i++)
+        printf("%d ", arr[i]);
+}
+
+
 void main()
-{ 
-  int size,arr[size];  
-    printf("Enter array size : \n");
-    scanf("%d",&size);
-  printf("Enter array elements : \n");
- for (int i=0;i<5;i++)
- {
-   scanf("%d",&arr[i]);
- }
-  repeat(arr,size);
-    
+{
+    int arr[] = {15, 1, 8, 6, 11};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    bubbleSort(arr, n);
+    printf("Sorted array: \n");
+    printArray(arr, n);
 }

@@ -1,33 +1,12 @@
 #include <stdio.h>
 void main()
 {
- int sum,arr[5][5]=
-               {
-                {10,12,15,18,71},
-                {1 ,2 ,3 ,4 ,5 },
-                {10,20,30,40,50},
-                {3 ,8 ,76,40 ,0},
-                {8 ,7 ,5 ,6  ,4}
-               };
- printf("Row totals : ");
- for (int i=0;i<5;i++)
- {
-    for (int j=0;j<5;j++)
-    {
-       sum += arr[i][j];       
-    }
-     printf("%d ",sum);
-     sum=0;  
- }           
- printf("\n");   
-   printf("Column totals : ");
- for (int j=0;j<5;j++)
- {
-    for (int i=0;i<5;i++)
-    {
-       sum += arr[i][j];       
-    }
-     printf("%d ",sum);
-     sum=0;  
- }              
+    int x = 10, y = 20, z = 30, *px = &x, *py = &y, *pz = &z;
+    printf("x=%d / y=%d / z=%d / px=%d / py=%d / pz=%d / *px=%d / *py=%d / *pz=%d\n",x,y,z,px,py,pz,*px,*py,*pz);
+    printf("Swapping pointers \n");
+    pz=px;
+    px=py;
+    py=pz;
+    printf("x=%d / y=%d / z=%d / px=%d / py=%d / pz=%d / *px=%d / *py=%d / *pz=%d\n",x,y,z,px,py,pz,*px,*py,*pz);
+
 }
