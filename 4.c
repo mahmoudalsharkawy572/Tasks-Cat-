@@ -1,32 +1,23 @@
 #include <stdio.h>
+#include <string.h>
+#define MAX_SIZE 100
 
-void repeat(int arr[],int size)
-{
-  int i,j;
-  printf("Repeated elements : ");
-  for (i=0;i<size;i++)
-  { 
-    for (j=i+1;j<size;j++)
-    {
-     
-     if (arr[i]==arr[j])
-      {
-        printf("%d ",arr[j]);
-      }
-    }
-  }
-}
 
 void main()
-{ 
-  int size,arr[size];  
-    printf("Enter array size : \n");
-    scanf("%d",&size);
-  printf("Enter array elements : \n");
- for (int i=0;i<5;i++)
- {
-   scanf("%d",&arr[i]);
- }
-  repeat(arr,size);
-    
+{
+    char str[MAX_SIZE],ch;
+
+    printf("Input string : ");
+    gets(str);
+    printf("Input character to search : ");
+    scanf("%c",&ch);
+    for (int i=0 ;str[i] != '\0' ;i++)
+    if (str[i]==ch)
+    {
+        printf("'%c' is found  at index %d",ch,i);
+        break;
+    }
+
+
+
 }

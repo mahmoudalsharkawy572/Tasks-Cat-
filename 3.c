@@ -1,26 +1,20 @@
-#include<stdio.h>
- 
-void main() {
- int arr[100], size, i, j;
-  
- printf("Enter number of elements in array from (1-100)\n");
- scanf("%d", &size);
- printf("Enter array elements : \n") ;
-  
- for(i = 0; i < size; i++){
-  scanf("%d", &arr[i]);
- }
-  
- printf("Unique Elements\n");
- for(i = 0; i < size; i++) {
-  for (j=0; j<i; j++){
-      if (arr[i] == arr[j])
-       break;
-       }
-      
-     if (i == j){
-      printf("%d ", arr[i]);
-  }
- }
-  
+#include <stdio.h>
+#include <string.h>
+#define MAX_SIZE 100
+
+void main()
+{
+    char str[MAX_SIZE],rev_str[MAX_SIZE];
+    int begin,end;
+    printf("Enter String : \n");
+    gets(str);
+    end=strlen(str)-1;
+    for(begin=0 ; begin<strlen(str) ; begin++)
+    {
+        rev_str[begin]=str[end];
+        end--;
+    }
+     rev_str[begin] = '\0';
+     printf("%s",rev_str);
+
 }
