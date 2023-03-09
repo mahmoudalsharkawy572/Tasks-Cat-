@@ -1,33 +1,37 @@
-#include <stdio.h>
+#include<stdio.h>
+#pragma pack(1)
+
+typedef struct Employees
+{
+ int salary,bonus,deductions;
+
+}employee;
 void main()
 {
-  int selection,arr[5];
-  printf("Enter array elemnts : \n");
-  for (int i=0;i<5;i++)
-{
-  scanf("%d",&arr[i]);
-}
-  printf("Enter selection -> 0.for ascending , 1.for descending : ");
-  scanf("%d",&selection);
-switch(selection){
-
-case 0:
-    printf("Ascend : ");
-    for (int i=0;i<5;i++)
+ int counter,sum=0;
+ employee em[3];
+ printf("\n");
+ for (counter = 0 ; counter<3 ; counter++)
  {
-    printf("%d ",arr[i]);
+    printf("Enter your salary (employee %d ): ",counter+1);
+    scanf("%d",&em[counter].salary);
+    printf("Enter your bonus (employee %d ): ",counter+1);
+    scanf("%d",&em[counter].bonus);
+    printf("Enter your deductions (employee %d ): ",counter+1);
+    scanf("%d",&em[counter].deductions);
+    printf("\n");
  }
-     break;
-case 1:     
-        printf("Descend : ");
-
- for (int i=4;i>=0;i--)
+ printf("\n");
+ for (counter = 0 ; counter<3 ; counter++)
  {
-    printf("%d ",arr[i]);
+    printf("Employee %d information: \n",counter+1);
+    printf("Salary = %d \n",em[counter].salary);
+    printf("Bonus = %d \n",em[counter].bonus);
+    printf("Deductions = %d \n",em[counter].deductions);
+    sum+=(em[counter].salary+em[counter].bonus-em[counter].deductions);
+    printf("\n");
  }
- break;
-  default :
-  printf("Invalid selection");
-  break;
-}
+ 
+ printf("Total money = %d\n",sum);
+
 }
